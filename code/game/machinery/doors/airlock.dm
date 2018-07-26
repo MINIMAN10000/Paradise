@@ -951,7 +951,7 @@ About the new airlock wires panel:
 		return ..()
 
 /obj/machinery/door/airlock/try_to_weld(obj/item/weldingtool/W, mob/user)
-	if(!operating && density && W.isOn())
+	if(!operating && density && W.remove_fuel(0, user))
 		if(user.a_intent == INTENT_HELP && obj_integrity < max_integrity)
 			user.visible_message("[user] is welding the airlock.", \
 							"<span class='notice'>You begin repairing the airlock...</span>", \
